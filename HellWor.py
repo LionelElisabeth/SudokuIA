@@ -12,10 +12,6 @@ test1 = [
 [3,6,9,3,6,9,3,6,9]
 ]
 
-
-
-
-
 def SepareSudoku(sudoku, tailleBlocs):
     listBlocs= []
     listLignes=[]
@@ -40,16 +36,24 @@ def SepareSudoku(sudoku, tailleBlocs):
 
     return listBlocs,listColonnes,listLignes
 
+def printMat(matrice):
+    print()
+    for row in  range(0, len(matrice[0])):
+        rowStr = ""
+        for column in range(0, len(matrice[1])):
+            rowStr = rowStr + str(matrice[row][column]) + " "
+            if ((column + 1)% 3) == 0:
+                rowStr = rowStr + " "
+            
+        print(rowStr)
+        if ((row + 1 )% 3) == 0:
+            print()
+
 def printList(l):
     for el in l:
         print(el)
 
-b,c,l =SepareSudoku(test1,3)
 
-printList(b)
-print()
-printList(c)
-print()
-printList(l)
+printMat(test1)
 
 #model.addAllDifferent()
